@@ -1,0 +1,110 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: EnsTrain - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Build : warning : failed to (or don't know how to) build 'E:\projects\bpnn\EXAMPLES\EnsTrain\Release\EnsTrain.pch'
+
+Creating temporary file "C:\DOCUME~1\zql\LOCALS~1\Temp\RSP163.tmp" with contents
+[
+/nologo /ML /W3 /GX /O2 /I "../" /D "NDEBUG" /D "WIN32" /D "_CONSOLE" /D "_MBCS" /D "CHI" /Fp"Release/EnsTrain.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\projects\bpnn\EXAMPLES\EnsTrain\EnsTrain.cpp"
+"E:\projects\bpnn\FS.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\zql\LOCALS~1\Temp\RSP163.tmp" 
+Creating temporary file "C:\DOCUME~1\zql\LOCALS~1\Temp\RSP164.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:no /pdb:"Release/EnsTrain.pdb" /machine:I386 /out:"Release/EnsTrain.exe" 
+.\Release\BagGener.obj
+.\Release\bpnn.obj
+.\Release\C45.obj
+.\Release\DataFile.obj
+.\Release\EnsPruner.obj
+.\Release\EnsTrain.obj
+.\Release\FS.obj
+.\Release\NaiveBayes.obj
+.\Release\result.obj
+.\Release\Statistic.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\zql\LOCALS~1\Temp\RSP164.tmp"
+<h3>Output Window</h3>
+Compiling...
+EnsTrain.cpp
+E:\projects\bpnn\EXAMPLES\EnsTrain\EnsTrain.cpp(124) : fatal error C1010: unexpected end of file while looking for precompiled header directive
+FS.cpp
+E:\projects\bpnn\FS.cpp(101) : fatal error C1010: unexpected end of file while looking for precompiled header directive
+Generating Code...
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+EnsTrain.exe - 2 error(s), 1 warning(s)
+<h3>
+--------------------Configuration: EnsTrain - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\zql\LOCALS~1\Temp\RSP165.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/EnsTrain.pdb" /debug /machine:I386 /out:"Debug/EnsTrain.exe" /pdbtype:sept 
+.\Debug\BagGener.obj
+.\Debug\bpnn.obj
+.\Debug\C45.obj
+.\Debug\DataFile.obj
+.\Debug\EnsPruner.obj
+.\Debug\EnsTrain.obj
+.\Debug\FS.obj
+.\Debug\NaiveBayes.obj
+.\Debug\result.obj
+.\Debug\Statistic.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\zql\LOCALS~1\Temp\RSP165.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+EnsTrain.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: kensm - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+
+
+
+<h3>Results</h3>
+kensm.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: kensm - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+
+
+
+<h3>Results</h3>
+kensm.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: EnsPredict - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+
+
+
+<h3>Results</h3>
+EnsPredict.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: EnsPredict - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+
+
+
+<h3>Results</h3>
+EnsPredict.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
