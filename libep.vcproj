@@ -46,6 +46,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="./;./classifiers;./ensembles;./utilities;./IncrementalEnsembles;./FileFormats;./pruners"
 				PreprocessorDefinitions="_CRT_SECURE_NO_DEPRECATE;WINVER=0x0500;_USE_32BIT_TIME_T;NDEBUG;WIN32;_LIB"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -119,6 +120,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
+				AdditionalIncludeDirectories="./;./classifiers;./ensembles;./utilities;./IncrementalEnsembles;./FileFormats;./pruners"
 				PreprocessorDefinitions="_CRT_SECURE_NO_DEPRECATE;WINVER=0x0500;_USE_32BIT_TIME_T;_DEBUG;WIN32;_LIB"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -324,43 +326,43 @@
 			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 			>
 			<File
-				RelativePath=".\ACE.cpp"
+				RelativePath=".\IncrementalEnsembles\ACE.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\AdaBoost.cpp"
+				RelativePath=".\ensembles\AdaBoost.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\ArffData.cpp"
+				RelativePath=".\FileFormats\ArffData.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\AWE.cpp"
+				RelativePath=".\IncrementalEnsembles\AWE.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\b-svm.cpp"
+				RelativePath=".\classifiers\b-svm.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Bagging.cpp"
+				RelativePath=".\ensembles\Bagging.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\bpnn.cpp"
+				RelativePath=".\classifiers\bpnn.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\C45.cpp"
+				RelativePath=".\classifiers\C45.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\cluster.cpp"
+				RelativePath=".\pruners\cluster.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\CustomEnsemble.cpp"
+				RelativePath=".\ensembles\CustomEnsemble.cpp"
 				>
 			</File>
 			<File
@@ -368,7 +370,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\DateTime.cpp"
+				RelativePath=".\utilities\DateTime.cpp"
 				>
 			</File>
 			<File
@@ -380,43 +382,39 @@
 				>
 			</File>
 			<File
-				RelativePath=".\FCAE.cpp"
+				RelativePath=".\IncrementalEnsembles\FCAE.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\FS.cpp"
+				RelativePath=".\pruners\FS.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\GA.cpp"
+				RelativePath=".\utilities\GA.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Gasen.cpp"
+				RelativePath=".\pruners\Gasen.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\GaussNaiveBayes.cpp"
+				RelativePath=".\classifiers\GaussNaiveBayes.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\kensm.cpp"
+				RelativePath=".\pruners\MDSQ.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\MDSQ.cpp"
+				RelativePath=".\classifiers\NaiveBayes.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\NaiveBayes.cpp"
+				RelativePath=".\pruners\OrientOrder.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\OrientOrder.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\PMEP.cpp"
+				RelativePath=".\pruners\PMEP.cpp"
 				>
 			</File>
 			<File
@@ -424,23 +422,27 @@
 				>
 			</File>
 			<File
-				RelativePath=".\RandSequence.cpp"
+				RelativePath=".\utilities\RandSequence.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\SEA.cpp"
+				RelativePath=".\IncrementalEnsembles\SEA.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\SelectAll.cpp"
+				RelativePath=".\IncrementalEnsembles\SEA_OP.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\SelectBest.cpp"
+				RelativePath=".\pruners\SelectAll.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Statistic.cpp"
+				RelativePath=".\pruners\SelectBest.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\utilities\Statistic.cpp"
 				>
 			</File>
 			<File
@@ -448,11 +450,15 @@
 				>
 			</File>
 			<File
-				RelativePath=".\UCIData.cpp"
+				RelativePath=".\FileFormats\UCIData.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\zString.cpp"
+				RelativePath=".\IncrementalEnsembles\Win.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\utilities\zString.cpp"
 				>
 			</File>
 		</Filter>
@@ -461,35 +467,35 @@
 			Filter="h;hpp;hxx;hm;inl"
 			>
 			<File
-				RelativePath=".\ACE.h"
+				RelativePath=".\IncrementalEnsembles\ACE.h"
 				>
 			</File>
 			<File
-				RelativePath=".\AdaBoost.h"
+				RelativePath=".\ensembles\AdaBoost.h"
 				>
 			</File>
 			<File
-				RelativePath=".\ArffData.h"
+				RelativePath=".\FileFormats\ArffData.h"
 				>
 			</File>
 			<File
-				RelativePath=".\AWE.h"
+				RelativePath=".\IncrementalEnsembles\AWE.h"
 				>
 			</File>
 			<File
-				RelativePath=".\b-svm.h"
+				RelativePath=".\classifiers\b-svm.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Bagging.h"
+				RelativePath=".\ensembles\Bagging.h"
 				>
 			</File>
 			<File
-				RelativePath=".\bpnn.h"
+				RelativePath=".\classifiers\bpnn.h"
 				>
 			</File>
 			<File
-				RelativePath=".\C45.h"
+				RelativePath=".\classifiers\C45.h"
 				>
 			</File>
 			<File
@@ -497,19 +503,15 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Cluster.h"
+				RelativePath=".\pruners\Cluster.h"
 				>
 			</File>
 			<File
-				RelativePath=".\CObj.h"
+				RelativePath=".\utilities\CrossValidate.h"
 				>
 			</File>
 			<File
-				RelativePath=".\CrossValidate.h"
-				>
-			</File>
-			<File
-				RelativePath=".\CustomEnsemble.h"
+				RelativePath=".\ensembles\CustomEnsemble.h"
 				>
 			</File>
 			<File
@@ -517,7 +519,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\DateTime.h"
+				RelativePath=".\utilities\DateTime.h"
 				>
 			</File>
 			<File
@@ -529,23 +531,23 @@
 				>
 			</File>
 			<File
-				RelativePath=".\FCAE.h"
+				RelativePath=".\IncrementalEnsembles\FCAE.h"
 				>
 			</File>
 			<File
-				RelativePath=".\FS.h"
+				RelativePath=".\pruners\FS.h"
 				>
 			</File>
 			<File
-				RelativePath=".\GA.h"
+				RelativePath=".\utilities\GA.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Gasen.h"
+				RelativePath=".\pruners\Gasen.h"
 				>
 			</File>
 			<File
-				RelativePath=".\GaussNaiveBayes.h"
+				RelativePath=".\classifiers\GaussNaiveBayes.h"
 				>
 			</File>
 			<File
@@ -557,11 +559,15 @@
 				>
 			</File>
 			<File
-				RelativePath=".\MDSQ.h"
+				RelativePath=".\IncrementalTrunkEnsemble.h"
 				>
 			</File>
 			<File
-				RelativePath=".\NaiveBayes.h"
+				RelativePath=".\pruners\MDSQ.h"
+				>
+			</File>
+			<File
+				RelativePath=".\classifiers\NaiveBayes.h"
 				>
 			</File>
 			<File
@@ -569,11 +575,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\OrientOrder.h"
+				RelativePath=".\pruners\OrientOrder.h"
 				>
 			</File>
 			<File
-				RelativePath=".\PMEP.h"
+				RelativePath=".\pruners\PMEP.h"
 				>
 			</File>
 			<File
@@ -581,23 +587,27 @@
 				>
 			</File>
 			<File
-				RelativePath=".\RandSequence.h"
+				RelativePath=".\utilities\RandSequence.h"
 				>
 			</File>
 			<File
-				RelativePath=".\SEA.h"
+				RelativePath=".\IncrementalEnsembles\SEA.h"
 				>
 			</File>
 			<File
-				RelativePath=".\SelectAll.h"
+				RelativePath=".\IncrementalEnsembles\SEA_OP.h"
 				>
 			</File>
 			<File
-				RelativePath=".\SelectBest.h"
+				RelativePath=".\pruners\SelectAll.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Statistic.h"
+				RelativePath=".\pruners\SelectBest.h"
+				>
+			</File>
+			<File
+				RelativePath=".\utilities\Statistic.h"
 				>
 			</File>
 			<File
@@ -605,11 +615,15 @@
 				>
 			</File>
 			<File
-				RelativePath=".\UCIData.h"
+				RelativePath=".\FileFormats\UCIData.h"
 				>
 			</File>
 			<File
-				RelativePath=".\zString.h"
+				RelativePath=".\IncrementalEnsembles\Win.h"
+				>
+			</File>
+			<File
+				RelativePath=".\utilities\zString.h"
 				>
 			</File>
 		</Filter>

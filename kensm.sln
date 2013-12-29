@@ -1,11 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kensm", "kensm.vcproj", "{0B182F78-2DDB-4F54-9342-7C5292284E47}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libep", "libep.vcproj", "{D8DD39D7-D278-4DBF-8971-A5A1A596F30B}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kstat", "kstat\kstat.vcproj", "{8B4DC644-2B92-41B3-B865-78CE54A2DD4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,14 +11,6 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0B182F78-2DDB-4F54-9342-7C5292284E47}.Debug|Win32.ActiveCfg = Debug|Win32
-		{0B182F78-2DDB-4F54-9342-7C5292284E47}.Debug|Win32.Build.0 = Debug|Win32
-		{0B182F78-2DDB-4F54-9342-7C5292284E47}.Debug|x64.ActiveCfg = Debug|x64
-		{0B182F78-2DDB-4F54-9342-7C5292284E47}.Debug|x64.Build.0 = Debug|x64
-		{0B182F78-2DDB-4F54-9342-7C5292284E47}.Release|Win32.ActiveCfg = Release|Win32
-		{0B182F78-2DDB-4F54-9342-7C5292284E47}.Release|Win32.Build.0 = Release|Win32
-		{0B182F78-2DDB-4F54-9342-7C5292284E47}.Release|x64.ActiveCfg = Release|x64
-		{0B182F78-2DDB-4F54-9342-7C5292284E47}.Release|x64.Build.0 = Release|x64
 		{D8DD39D7-D278-4DBF-8971-A5A1A596F30B}.Debug|Win32.ActiveCfg = Debug|Win32
 		{D8DD39D7-D278-4DBF-8971-A5A1A596F30B}.Debug|Win32.Build.0 = Debug|Win32
 		{D8DD39D7-D278-4DBF-8971-A5A1A596F30B}.Debug|x64.ActiveCfg = Debug|x64
@@ -31,14 +19,6 @@ Global
 		{D8DD39D7-D278-4DBF-8971-A5A1A596F30B}.Release|Win32.Build.0 = Release|Win32
 		{D8DD39D7-D278-4DBF-8971-A5A1A596F30B}.Release|x64.ActiveCfg = Release|x64
 		{D8DD39D7-D278-4DBF-8971-A5A1A596F30B}.Release|x64.Build.0 = Release|x64
-		{8B4DC644-2B92-41B3-B865-78CE54A2DD4D}.Debug|Win32.ActiveCfg = Debug|Win32
-		{8B4DC644-2B92-41B3-B865-78CE54A2DD4D}.Debug|Win32.Build.0 = Debug|Win32
-		{8B4DC644-2B92-41B3-B865-78CE54A2DD4D}.Debug|x64.ActiveCfg = Debug|x64
-		{8B4DC644-2B92-41B3-B865-78CE54A2DD4D}.Debug|x64.Build.0 = Debug|x64
-		{8B4DC644-2B92-41B3-B865-78CE54A2DD4D}.Release|Win32.ActiveCfg = Release|Win32
-		{8B4DC644-2B92-41B3-B865-78CE54A2DD4D}.Release|Win32.Build.0 = Release|Win32
-		{8B4DC644-2B92-41B3-B865-78CE54A2DD4D}.Release|x64.ActiveCfg = Release|x64
-		{8B4DC644-2B92-41B3-B865-78CE54A2DD4D}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
