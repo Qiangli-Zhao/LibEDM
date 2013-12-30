@@ -5,27 +5,46 @@ It a C++ library for ensemble based machine learning. It is a toolkit that provi
 
 
 Four base classifiers:
-1. Back-Propagation Neural Networks (BPNN);
+
+1) Back-Propagation Neural Networks (BPNN);
+
 2) C4.5 decision trees;
+
 3) Supported Vector Machine;
+
 4) Naïve Bayes;
 
+
 Two ensemble:
+
 1) Bagging;
+
 2) AdaBoost;
 
+
 Three stream based incremental ensemble:
+
 1) SEA;
+
 2) AWE;
+
 3) ACE;
 
+
 Seven ensemble pruner:
+
 1) Select Best;
+
 2) Forward Selection (FS);
+
 3) GASEN (GA);
+
 4) Oriented Order (OO);
+
 5) Margin Distance Minimization (MDSQ);
+
 6) Pattern Mining based Ensemble Pruning (PMEP);
+
 7) Cluster-based Pruning (CPF);
 
 Supported Data File Formats:
