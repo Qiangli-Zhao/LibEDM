@@ -5,7 +5,6 @@ It a C++ library for ensemble based machine learning. It is a toolkit that provi
 
 
 Four base classifiers:
-
 1) Back-Propagation Neural Networks (BPNN);
 
 2) C4.5 decision trees;
