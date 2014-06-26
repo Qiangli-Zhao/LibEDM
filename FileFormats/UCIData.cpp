@@ -75,26 +75,33 @@ void CUCIData::ReadInfo(ifstream &InfoFile)
 		//format and parse the line
 		if(FormatLine(Line)==SKIP_LINE)
 			continue;
-		//read data from the line
-		basic_istringstream<char> DataLine(Line);
+		//read class label from the line
 		DiscValueStr ClassDesc;
-		while(!DataLine.eof())
+
+		char *DataLine=new char[Line.length()+1];
+		strcpy(DataLine,Line.c_str());
+		const char *Del=",";
+		char *pValue=strtok(DataLine,Del);
+		while(pValue!=NULL)
 		{
 			//read a value
-			DataLine>>ClassDesc.Name;
+			ClassDesc.Name=pValue;
 			//is Label putted at the end of line?
 			if(ValueNum==0 && ClassDesc.Name=="-")
 			{
+				delete [] DataLine;
+
 				//Label is putted at the first non-ignored attribute
 				LabelAtEnd=false;
 				continue;
 			}
-			//read failed
-			if(DataLine.fail())
-				break;
 			CaseInfo.Classes.push_back(ClassDesc);
 			ValueNum++;
+
+			//read next class label
+			pValue=strtok(NULL,Del);
 		}
+		delete [] DataLine;
 		//found class description?
 		if(ValueNum>0)
 			break;
@@ -133,18 +140,25 @@ void CUCIData::ReadInfo(ifstream &InfoFile)
 		AttrStr Attr;
 		Attr.MMSet=false;
 		Attr.Max=Attr.Min=0;
-		basic_istringstream<char> DataLine(Line);
-		DataLine>>Attr.Name;
+		//name
+		char *DataLine=new char[Line.length()+1];
+		strcpy(DataLine,Line.c_str());
+		const char *Del=",:";
+		char *pValue=strtok(DataLine,Del);
+		Attr.Name=pValue;
 
 		//read attribute type
 		string value;
-		DataLine>>value;
-		if(DataLine.fail())
+		pValue=strtok(NULL,Del);
+		if(pValue==NULL)
 		{
+			delete [] DataLine;
+
 			basic_ostringstream<char> OutMsg;
 			OutMsg<<"Information file: err in attribute description "<<CaseInfo.ReadWidth<<ends;
 			throw(CError(string(OutMsg.str()),305,0));
 		}
+		value=pValue;
 		//read attribute data
 		if(value=="ignore")
 		{
@@ -176,15 +190,17 @@ void CUCIData::ReadInfo(ifstream &InfoFile)
 				Attr.Disc.push_back(DiscValue);
 				ValueNum++;
 				//read next value
-				DataLine>>value;
-				//read failed
-				if(DataLine.fail())
+				pValue=strtok(NULL,Del);
+				if(pValue==NULL)
 					break;
+				value=pValue;
 			}
 			while(true);
 			//found value description?
 			if(ValueNum<=0)
 			{
+				delete [] DataLine;
+
 				basic_ostringstream<char> OutMsg;
 				OutMsg<<"Information file: no discrete-values description found "<<CaseInfo.ReadWidth+1<<ends;
 				throw(CError(string(OutMsg.str()),306,0));
@@ -198,8 +214,9 @@ void CUCIData::ReadInfo(ifstream &InfoFile)
 
 			CaseInfo.ReadWidth++;
 			CaseInfo.ValidWidth++;
-		}
-	}
+		}//end of a discrete attribute
+		delete [] DataLine;
+	}//end of attributes;
 
 	//position of label
 	AttrStr Attr;

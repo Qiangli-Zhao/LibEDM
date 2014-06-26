@@ -185,7 +185,7 @@ CPrediction *CEnsemble::Classify(const CDataset &DataSet,const vector<double> &U
 			continue;
 		//get prediction of each classifier
 		CPrediction *Prediction=Classifiers[i]->Classify(DataSet);
-		const IntArray &PredictedLabels=Prediction->GetPredictedLabels();
+		const IntArray &PredictedLabels=Prediction->GetPredictedLabelIndices();
 		//for each instance
 		for(int j=0;j<CaseInfo.Height;j++)
 		{
@@ -227,7 +227,7 @@ CPrediction *CEnsemble::Classify(const CDataset &DataSet,const vector<CPredictio
 		if(UserWeights[i]==0)
 			continue;
 		//get prediction of each classifier
-		const IntArray &PredictedLabels=Predictions[i]->GetPredictedLabels();
+		const IntArray &PredictedLabels=Predictions[i]->GetPredictedLabelIndices();
 		//for each instance
 		for(int j=0;j<CaseInfo.Height;j++)
 		{

@@ -374,34 +374,28 @@ void CDataset::Load(const CASE_INFO &uCaseInfo,const vector<StringArray> &Instan
 //
 const int CDataset::LINE_OK=0;
 const int CDataset::SKIP_LINE=1;
+//remove all control chars and reserve only space and comma
 int CDataset::FormatLine(string &Line) const
 {
 	int Dot=0;
 	bool PeriodisLast=false;
-	bool Quoted=false;
-	//first position for two consecutive quotes
-	int QStart=0;
-	//
-	int End=Line.length();
+	//use space as delimiter?
+	bool SpaceAsDelimiter=false;
+	if(Line.find(',')==string::npos&&Line.find(':')==string::npos)
+		SpaceAsDelimiter=true;
+	//table is transfered into space
+	for(int i=0;i<(int)Line.length();i++)
+		if(Line[i]=='\t')
+			Line[i]=' ';
 
-
+	//format
 	for(int i=0;i<(int)Line.length();)
 	{
-		//control chars
-		if(Line[i]>'\0'&&Line[i]<' ')
+		//all other non-readable chars are treated as delimiter
+		if(Line[i]<' ')
 		{
-			if(Line[i]=='\r' || Line[i]=='\n')//change to delimiter
-			{
-				Line[i]='\0';
-				if(i<End)End=i;
-				break;
-			}
-			else//others change to space
-			{
-				Line[i]=' ';
-				i++;
-				continue;
-			}
+			Line.erase(Line.begin()+i,Line.end());
+			continue;
 		}
 
 		//remove leading spaces
@@ -411,101 +405,68 @@ int CDataset::FormatLine(string &Line) const
 			continue;
 		}
 
-		//quoted chars
-		//for compatible with the csv format
-		if(Line[i]=='"'||Line[i]=='\'')
-		{
-			//first quotation mark
-			if(!Quoted)
-			{
-				//remove it
-				Line.erase(Line.begin()+i);
-				Quoted=true;
-				QStart=i;
-			}
-			else//second quotation mark
-			{
-				Quoted=false;
-				//two consecutive quotes mean null
-				if(QStart==i)
-				{
-					Line[i]='?';
-					i++;
-				}
-				else
-					Line.erase(Line.begin()+i);
-			}
-
-			continue;
-		}
-		if(Quoted)//Quoted spaces are changed to '_'
-		{
-			if(Line[i]==' ')
-				Line[i]='_';
-// 			i++;
-// 			continue;
-		}
-
 		switch(Line[i])
 		{
-		case '|'://comment
-		case '%'://comment
-			Line[i]='\0';
-			break;
+		case '"'://remove quotation mark
+		case '\'':
+			Line.erase(Line.begin()+i);
+			continue;
+		case '|'://remove commented
+		case '%'://remove commented
+			Line.erase(Line.begin()+i,Line.end());
+			continue;
 		case ';'://heading semicolon as comment
 			if(i<=0)
-				Line[i]='\0';
+			{
+				Line.erase(Line.begin()+i,Line.end());
+				continue;
+			}
 			else//otherwise as delimiter
-				Line[i]=' ';
-			break;
-		case ','://delimiter
-		case ' ':
-			Line[i]=' ';
-			break;
-		case ':'://start of attribute description
-			for(int j=0;j<i;j++)
-				if(Line[j]==' ')Line[j]='_';
-			Line[i]=' ';
+				Line[i]=',';
 			break;
 		case '.'://last character in line is a dot, which means end of line
 			Dot=i;
 			PeriodisLast=true;
 			break;
-		default:
-			//non-control chars
+		case ','://delimiter
+		case ':'://start of attribute description
+			//remove preceding and trailing spaces
+			while(Line[i+1]==' ')
+				Line.erase(Line.begin()+i+1);
+			while(i>0&&Line[i-1]==' ')
+			{
+				Line.erase(Line.begin()+i-1);
+				i--;
+			}
+			break;
+		case ' ':
+			break;
+		default://non-control chars
+			//lower case
 			if(Line[i]>='A'&&Line[i]<='Z')
 				Line[i]-=('A'-'a');
 			PeriodisLast=false;
 			break;
 		}
 
-		if(Line[i]=='\0')
-		{
-			if(i<End)End=i;
-			break;
-		}
-
 		i++;
 	}
 
-	//a dot is the last
+	//if last char is a period, the line is ended
 	if(PeriodisLast)
-	{
-		Line[Dot]='\0';
-		if(Dot<End)End=Dot;
-	}
-
-	//remove unless trailing chars
-	if(End<(int)Line.length())
-		Line.erase(Line.begin()+End,Line.end());
+		Line.erase(Line.begin()+Dot,Line.end());
 	//remove trailing spaces
 	for(int i=(int)Line.length()-1;i>=0;i--)
 	{
-		if(Line[i]==' '||Line[i]=='\0')
+		if(Line[i]==' '||Line[i]=='\t')
 			Line.erase(Line.begin()+i);
 		else
 			break;		
 	}
+	//convert space into comma
+	for(int i=0;i<(int)Line.length();i++)
+		if(SpaceAsDelimiter&&Line[i]==' ')
+			Line[i]=',';
 
 	//empty line?
 	if(Line.length()<=0)
@@ -522,16 +483,19 @@ void CDataset::ReadInfo(ifstream &InfoFile)
 //if the first word of the first line is the name of any attribute, this file has a head line
 bool CDataset::HasHeading(string &Line) const
 {
-	basic_istringstream<char> DataLine(Line);
 	//read a value
-	string Value;
-	DataLine>>Value;
-	int i;
+	char *DataLine=new char[Line.length()+1];
+	strcpy(DataLine,Line.c_str());
+	const char *Del=",";
+	char *pValue=strtok(DataLine,Del);
+	string Value=pValue;
 
 	// is it a name for an attribute?
+	int i;
 	for(i=0;i<CaseInfo.ReadWidth;i++)
 		if(CaseInfo.ReadAttrs[i].Name==Value)
 			break;
+	delete [] DataLine;
 	if(i<CaseInfo.ReadWidth)
 		return true;
 
@@ -583,19 +547,19 @@ void CDataset::ReadMatrix(ifstream &DataFile,int Number)
 			continue;
 
 		//read data from the line
-		basic_istringstream<char> DataLine(Line);
 		int ValueNum=0;
 		InstanceStr Inst;
 		bool HasMissedValue=false;
 		ValueData Label;
-		while(!DataLine.eof())
+
+		char *DataLine=new char[Line.length()+1];
+		strcpy(DataLine,Line.c_str());
+		const char *Del=",";
+		char *pValue=strtok(DataLine,Del);
+		while(pValue!=NULL)
 		{
 			//read a value
-			string Value;
-			DataLine>>Value;
-			//read failed
-			if(DataLine.fail())
-				break;
+			string Value(pValue);
 
 			ValueData Item;
 			//get class label
@@ -607,18 +571,24 @@ void CDataset::ReadMatrix(ifstream &DataFile,int Number)
 				}
 				catch(CError &Err)
 				{
+					delete [] DataLine;
+
 					basic_ostringstream<char> OutMsg;
-					OutMsg<<InstanceNum<<ends;
+					OutMsg<<" in line "<<InstanceNum<<ends;
 					Err.Description+=OutMsg.str();
 					throw(Err);
 				}
 				ValueNum++;
+				//read next value
+				pValue=strtok(NULL,Del);
 				continue;
 			}
 			else if(CaseInfo.ReadAttrs[ValueNum].AttType==ATT_IGNORED)
 			{
 				//for ignored attribute, we just skip the value
 				ValueNum++;
+				//read next value
+				pValue=strtok(NULL,Del);
 				continue;
 			}
 			else if(CaseInfo.ReadAttrs[ValueNum].AttType==ATT_DISCRETE)
@@ -630,8 +600,10 @@ void CDataset::ReadMatrix(ifstream &DataFile,int Number)
 				}
 				catch(CError &Err)
 				{
+					delete [] DataLine;
+
 					basic_ostringstream<char> OutMsg;
-					OutMsg<<InstanceNum<<ends;
+					OutMsg<<" in line "<<InstanceNum<<ends;
 					Err.Description+=OutMsg.str();
 					throw(Err);
 				}
@@ -672,7 +644,7 @@ void CDataset::ReadMatrix(ifstream &DataFile,int Number)
 			}
 			else if(CaseInfo.ReadAttrs[ValueNum].AttType==ATT_CONTINUOUS||
 				CaseInfo.ReadAttrs[ValueNum].AttType==ATT_DATETIME)
-			{  
+			{
 				//continuous attribute with double value
 				if(CaseInfo.ReadAttrs[ValueNum].AttType==ATT_CONTINUOUS)
 				{
@@ -716,7 +688,10 @@ void CDataset::ReadMatrix(ifstream &DataFile,int Number)
 
 			ValueNum++;
 			Inst.push_back(Item);
+			//read next value
+			pValue=strtok(NULL,Del);
 		}//line
+		delete [] DataLine;
 		//not enough values for all attributes
 		if(Inst.size()+1!=CaseInfo.ValidWidth)
 		{
@@ -767,8 +742,8 @@ bool CDataset::Which(ValueData &Item,const string &Name) const
 	it=find(CaseInfo.Classes.begin(),CaseInfo.Classes.end(),tmp);
 	if(it==CaseInfo.Classes.end())
 	{
-		string Msg="unexpected class label (";
-		throw(CError(Msg+Name+")",312,0));
+		string Msg="unexpected class label ";
+		throw(CError(Msg+"'"+Name+"'",312,0));
 	}
 
 	Item.Discr=(int)(it-CaseInfo.Classes.begin());
@@ -792,8 +767,8 @@ bool CDataset::Which(ValueData &Item,int ValueNum,const string &Name) const
 	it=find(CaseInfo.ReadAttrs[ValueNum].Disc.begin(),CaseInfo.ReadAttrs[ValueNum].Disc.end(),tmp);
 	if(it==CaseInfo.ReadAttrs[ValueNum].Disc.end())
 	{
-		string Msg="unexpected discrete value in column ";
- 		throw(CError(Msg+CzString::IntToStr(ValueNum)+"("+Name+")",313,0));
+		string Msg="unexpected discrete value ";
+ 		throw(CError(Msg+"'"+Name+"'"+" of column "+CzString::IntToStr(ValueNum),313,0));
 	}
 
 	Item.Discr=(int)(it-CaseInfo.ReadAttrs[ValueNum].Disc.begin());

@@ -83,8 +83,8 @@ CCluster::CCluster(const CEnsemble &UEnsemble,const CDataset &ValidatingSet,cons
 		double Distance=0;
 		for(int i=0;i<ClusterNum;i++)
 			for(int j=i+1;j<ClusterNum;j++)
-				Distance+=kappa(Predictions[Centroids[i]]->GetPredictedLabels(),
-					Predictions[Centroids[j]]->GetPredictedLabels(),ClassNum);
+				Distance+=kappa(Predictions[Centroids[i]]->GetPredictedLabelIndices(),
+					Predictions[Centroids[j]]->GetPredictedLabelIndices(),ClassNum);
 		//disagreement is not increase?
 		Distance/=(ClusterNum*(ClusterNum-1)/2);
 		//disagreement is not increase, so we don't need to increase the number of clusters
@@ -125,8 +125,8 @@ CCluster::CCluster(const CEnsemble &UEnsemble,const CDataset &ValidatingSet,cons
 			}
 
 			int LastClassifier=BestClusters[i][BestClusters[i].size()-1].Classifier;
-			double kappa1=kappa(Predictions[Classifier]->GetPredictedLabels(),
-				Predictions[LastClassifier]->GetPredictedLabels(),ClassNum);
+			double kappa1=kappa(Predictions[Classifier]->GetPredictedLabelIndices(),
+				Predictions[LastClassifier]->GetPredictedLabelIndices(),ClassNum);
 			if(kappa1<Lamda)
 			{
 				//by disagreement criterion we have to remove this classifier,
@@ -176,8 +176,8 @@ CCluster::CCluster(const CEnsemble &UEnsemble,const CDataset &ValidatingSet,cons
 				{
 					int Cid=BestClusters[i][k].Classifier;
 					//if each classifier in the cluster is same as the top accurate one, all kappa is zero, as well as their sum
-					double Kp=fabs(kappa(Predictions[Classifier]->GetPredictedLabels(),
-						Predictions[Cid]->GetPredictedLabels(),ClassNum))+0.000001;
+					double Kp=fabs(kappa(Predictions[Classifier]->GetPredictedLabelIndices(),
+						Predictions[Cid]->GetPredictedLabelIndices(),ClassNum))+0.000001;
 					SumKp+=Kp;
 					Kps.push_back(Kp);
 				}
@@ -245,8 +245,8 @@ CCluster::CCluster(const CEnsemble &UEnsemble,const CDataset &ValidatingSet,doub
 		double Distance=0;
 		for(int i=0;i<ClusterNum;i++)
 			for(int j=i+1;j<ClusterNum;j++)
-				Distance+=kappa((*Predictions)[Centroids[i]]->GetPredictedLabels(),
-				(*Predictions)[Centroids[j]]->GetPredictedLabels(),ClassNum);
+				Distance+=kappa((*Predictions)[Centroids[i]]->GetPredictedLabelIndices(),
+				(*Predictions)[Centroids[j]]->GetPredictedLabelIndices(),ClassNum);
 		//disagreement is not increase?
 		Distance/=(ClusterNum*(ClusterNum-1)/2);
 		//disagreement is not increase, so we don't need to increase the number of clusters
@@ -287,8 +287,8 @@ CCluster::CCluster(const CEnsemble &UEnsemble,const CDataset &ValidatingSet,doub
 			}
 
 			int LastClassifier=BestClusters[i][BestClusters[i].size()-1].Classifier;
-			double kappa1=kappa((*Predictions)[Classifier]->GetPredictedLabels(),
-				(*Predictions)[LastClassifier]->GetPredictedLabels(),ClassNum);
+			double kappa1=kappa((*Predictions)[Classifier]->GetPredictedLabelIndices(),
+				(*Predictions)[LastClassifier]->GetPredictedLabelIndices(),ClassNum);
 			if(kappa1<Lamda)
 			{
 				//by disagreement criteria we will remove this classifier,
@@ -338,8 +338,8 @@ CCluster::CCluster(const CEnsemble &UEnsemble,const CDataset &ValidatingSet,doub
 				{
 					int Cid=BestClusters[i][k].Classifier;
 					//if each classifier in the cluster is same as the top accurate one, all kappa is zero, as well as their sum
-					double Kp=fabs(kappa((*Predictions)[Classifier]->GetPredictedLabels(),
-						(*Predictions)[Cid]->GetPredictedLabels(),ClassNum))+0.000001;
+					double Kp=fabs(kappa((*Predictions)[Classifier]->GetPredictedLabelIndices(),
+						(*Predictions)[Cid]->GetPredictedLabelIndices(),ClassNum))+0.000001;
 					SumKp+=Kp;
 					Kps.push_back(Kp);
 				}

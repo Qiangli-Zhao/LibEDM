@@ -39,7 +39,7 @@ using namespace libep;
 
 // void operator +=(PRED_RESULT &a, const PRED_RESULT &b)
 // {
-// 	if(a.PredClass.size()==0)
+// 	if(a.PredLabelIndices.size()==0)
 // 	{
 // 		a=b;
 // 		return;
@@ -48,8 +48,8 @@ using namespace libep;
 // 	_ASSERT(a.ClassNum==b.ClassNum);
 // 
 // 	a.CaseNum+=b.CaseNum;
-// 	for(int i=0;i<(int)b.PredClass.size();i++)
-// 		a.PredClass.push_back(b.PredClass[i]);
+// 	for(int i=0;i<(int)b.PredLabelIndices.size();i++)
+// 		a.PredLabelIndices.push_back(b.PredLabelIndices[i]);
 // 	for(int i=0;i<(int)b.IsCorrect.size();i++)
 // 		a.IsCorrect.push_back(b.IsCorrect[i]);
 // }
@@ -62,10 +62,10 @@ using namespace libep;
 // 	c.CaseNum=a.CaseNum+b.CaseNum;
 // 	c.ClassNum=a.ClassNum;
 // 
-// 	for(int i=0;i<(int)a.PredClass.size();i++)
-// 		c.PredClass.push_back(a.PredClass[i]);
-// 	for(int i=0;i<(int)b.PredClass.size();i++)
-// 		c.PredClass.push_back(b.PredClass[i]);
+// 	for(int i=0;i<(int)a.PredLabelIndices.size();i++)
+// 		c.PredLabelIndices.push_back(a.PredLabelIndices[i]);
+// 	for(int i=0;i<(int)b.PredLabelIndices.size();i++)
+// 		c.PredLabelIndices.push_back(b.PredLabelIndices[i]);
 // 
 // 	for(int i=0;i<(int)a.IsCorrect.size();i++)
 // 		c.IsCorrect.push_back(a.IsCorrect[i]);
@@ -103,7 +103,7 @@ CPrediction::CPrediction(const CDataset &Dataset,const DoubleArray2d &Probabilit
 				Class=k;
 				MaxProb=Probs[j][k];
 			}
-		PredClass.push_back(Class);
+		PredLabelIndices.push_back(Class);
 
 		//correct prediction count
 		int IdealResult=Data[j][Info.ValidWidth-1].Discr;
@@ -127,9 +127,9 @@ const DoubleArray2d& CPrediction::GetProbs() const
 	return Probs;
 }
 
-const IntArray& CPrediction::GetPredictedLabels() const
+const IntArray& CPrediction::GetPredictedLabelIndices() const
 {
-	return PredClass;
+	return PredLabelIndices;
 }
 
 const BoolArray& CPrediction::GetCorrectness() const

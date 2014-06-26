@@ -48,14 +48,14 @@ namespace libep
 
 		DoubleArray2d Probs;//probability that each instance belongs to each class type
 		double Accuracy;
-		IntArray PredClass;//predicted class label for each instance
+		IntArray PredLabelIndices;//predicted class label for each instance
 		BoolArray IsCorrect;//is the prediction correct?
 	public:
 		CPrediction(const CDataset &Dataset,const DoubleArray2d &Probabilities,clock_t PredictTime);
 		~CPrediction();
 
 		const DoubleArray2d& GetProbs() const;
-		const IntArray &GetPredictedLabels() const;
+		const IntArray &GetPredictedLabelIndices() const;
 		const BoolArray& GetCorrectness() const;
 		double GetAccuracy() const;
 

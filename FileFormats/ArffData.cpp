@@ -78,16 +78,27 @@ void CArffData::ReadInfo(ifstream &InfoFile)
 			continue;
 
 		//read declaration from the line
-		string Declaration;
-		basic_istringstream<char> DataLine(Line);
-		DataLine>>Declaration;
+		char *DataLine=new char[Line.length()+1];
+		strcpy(DataLine,Line.c_str());
+		const char *Del=", ";
+		char *pValue=strtok(DataLine,Del);
+		string Declaration=pValue;
 		//type
 		if(Declaration=="@relation")
+		{
+			delete [] DataLine;
 			continue;
+		}
 		else if(Declaration=="@data")
+		{
+			delete [] DataLine;
 			break;
+		}
 		else if(Declaration!="@attribute")
+		{
+			delete [] DataLine;
 			throw(CError("Information file: unexpected declaration!",306,0));
+		}
 
 
 		//process the attributes and label
@@ -95,17 +106,21 @@ void CArffData::ReadInfo(ifstream &InfoFile)
 		AttrStr Attr;
 		Attr.MMSet=false;
 		Attr.Max=Attr.Min=0;
-		DataLine>>Attr.Name;
+		pValue=strtok(NULL,Del);
+		Attr.Name=pValue;
 
 		//read attribute type
 		string value;
-		DataLine>>value;
-		if(DataLine.fail())
+		pValue=strtok(NULL,Del);
+		if(pValue==NULL)
 		{
+			delete [] DataLine;
+
 	    	basic_ostringstream<char> OutMsg;
 			OutMsg<<"Information file: err in attribute description "<<CaseInfo.ReadWidth<<ends;
 			throw(CError(string(OutMsg.str()),305,0));
 		}
+		value=pValue;
 		//read attribute data
 		if(value=="string")
 		{
@@ -152,6 +167,8 @@ void CArffData::ReadInfo(ifstream &InfoFile)
 				{
 					if(value[0]!='{')
 					{
+						delete [] DataLine;
+
 						basic_ostringstream<char> OutMsg;
 						OutMsg<<"Information file: err in attribute description "<<CaseInfo.ReadWidth<<ends;
 						throw(CError(string(OutMsg.str()),307,0));
@@ -177,15 +194,18 @@ void CArffData::ReadInfo(ifstream &InfoFile)
 				if(IsLast)
 					break;
 				//read next value
-				DataLine>>value;
+				pValue=strtok(NULL,Del);
 				//read failed
-				if(DataLine.fail())
+				if(pValue==NULL)
 					break;
+				value=pValue;
 			}
 			while(true);
 			//found value descriptions?
 			if(ValueNum<=0)
 			{
+				delete [] DataLine;
+
 				basic_ostringstream<char> OutMsg;
 				OutMsg<<"Information file: no discrete-values description found "<<CaseInfo.ReadWidth<<ends;
 				throw(CError(string(OutMsg.str()),306,0));
@@ -201,6 +221,7 @@ void CArffData::ReadInfo(ifstream &InfoFile)
 			CaseInfo.ReadWidth++;
 			CaseInfo.ValidWidth++;
 		}//end of a discrete attribute (maybe the class label)
+		delete [] DataLine;
 	}//end of file
 
 	//the last discrete attribute is the label

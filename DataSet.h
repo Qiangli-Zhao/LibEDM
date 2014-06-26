@@ -229,7 +229,7 @@ namespace libep
 		//is the data file in CSV format?
 		bool HasHeading(string &Line) const;
 		//transfer a data string into our inner format
-		int FormatLine(string &Line) const;
+		virtual int FormatLine(string &Line) const;
 		//search a name in class labels, return false if it is unknown
 		bool Which(ValueData &Item,const string &Name) const;
 		//search a value in the description of an attribute, return false if it's unknown

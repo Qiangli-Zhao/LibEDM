@@ -87,7 +87,7 @@ void CSEA_OP::Train(const CDataset &Dataset, const CClassifier *Cls)
 	const DoubleArray2d &Probs_E=Result_E->GetProbs();
 	const DoubleArray2d &Probs_Ci=Result_Ci->GetProbs();
 	//predicted class
-	const vector<int> &Predicts_Ci=Result_Ci->GetPredictedLabels();
+	const vector<int> &Predicts_Ci=Result_Ci->GetPredictedLabelIndices();
 	//correctness
 	const BoolArray &Corrects_Ci=Result_Ci->GetCorrectness();
 	const BoolArray &Corrects_E=Result_E->GetCorrectness();
@@ -134,7 +134,7 @@ void CSEA_OP::Train(const CDataset &Dataset, const CClassifier *Cls)
  		//qualities for all classifiers of the ensemble
 		for(int j=0;j<Size;j++)
 		{
-			const vector<int> &Predicts=(*Predictions)[j]->GetPredictedLabels();
+			const vector<int> &Predicts=(*Predictions)[j]->GetPredictedLabelIndices();
 			const BoolArray &Corrects=(*Predictions)[j]->GetCorrectness();
 
 			//the percentage for the prediction of the j-th base classifier to the i-th instance
