@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
 			delete Cls;
 
 			//extract information of the prediction
-			const vector<int> &Predicted=Result->GetPredictedLabels();
+			const vector<int> &Predicted=Result->GetPredictedLabelIndices();
 			const vector<bool> &Correct=Result->GetCorrectness();
 			for(int i=0;i<(int)Predicted.size();i++)
 			{
