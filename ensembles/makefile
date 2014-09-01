@@ -1,8 +1,8 @@
 INCDIR = -I../ -I../classifiers -I../ensembles -I../FileFormats -I../IncrementalEnsembles -I../pruners -I../utilities
 LIBS = 
 LIBDIRS = 
-CFLAG = -O3
-CCFLAG = -O3
+CFLAG = -O3 -shared -fPIC
+CCFLAG = -O3 -shared -fPIC
 LDFLAG = -O3
 CC = gcc
 CCC = g++

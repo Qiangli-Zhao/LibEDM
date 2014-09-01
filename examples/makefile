@@ -1,5 +1,5 @@
 INCDIR = -I../ -I../classifiers -I../ensembles -I../FileFormats -I../IncrementalEnsembles -I../pruners -I../utilities
-LIBS = -lm -lstdc++ -lep
+LIBS = -lm -lstdc++ -ledm
 LIBDIRS = -L../
 CFLAG = -O3
 CCFLAG = -O3
@@ -16,15 +16,15 @@ MAKEFILE = makefile
 all:$(TARGETS) subdirs
 
 run:
-	dataset
-	classifier
-	classifier1
-	Ensemble
-	Pruner
-	Pruner1
-	Statistic
-	CrossValidate
-	IncEnsemble
+	./dataset
+	./classifier
+	./classifier1
+	./Ensemble
+	./Pruner
+	./Pruner1
+	./Statistic
+	./CrossValidate
+	./IncEnsemble
 
 subdirs:
 	@for dir in $(SUBDIRS) ;\
