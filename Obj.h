@@ -74,7 +74,7 @@ namespace libep
 	};
 
 	//roulette implementing weighted sampling
-	//this function is implemented in DatSet.cpp
+	//this function is implemented in RandSequence.cpp
 	int IntRand(int Max);
 	class CRoulette
 	{

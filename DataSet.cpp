@@ -61,26 +61,6 @@ using namespace libep;
 // 		delete a;
 // }
 // 
-//return a pseudorandom number, between 0 and Max-1
-//Max: should no larger than INT_MAX
-int libep::IntRand(int Max)
-{
-	int Value=0;
-
-#if RAND_MAX >= INT_MAX
-	Value=rand();
-	if(Value>=Max)
-		Value=Value%Max;
-#else
-	int Count=(Max+RAND_MAX)/(RAND_MAX+1);
-	for(int i=0;i<Count;i++)
-		Value+=rand();
-	Value=Value%Max;
-#endif
-
-	return Value;
-}
-
 CDataset &CDataset::operator +=(const CDataset &b)
 {
 	//same object

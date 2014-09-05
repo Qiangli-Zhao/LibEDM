@@ -46,7 +46,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="./;./classifiers;./ensembles;./utilities;./IncrementalEnsembles;./FileFormats;./pruners"
+				AdditionalIncludeDirectories="D:\projects\bpnn;D:\projects\bpnn\classifiers;D:\projects\bpnn\ensembles;D:\projects\bpnn\FileFormats;D:\projects\bpnn\pruners;D:\projects\bpnn\utilities;D:\projects\bpnn\IncrementalEnsembles"
 				PreprocessorDefinitions="_CRT_SECURE_NO_DEPRECATE;WINVER=0x0500;_USE_32BIT_TIME_T;NDEBUG;WIN32;_LIB"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -120,7 +120,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="./;./classifiers;./ensembles;./utilities;./IncrementalEnsembles;./FileFormats;./pruners"
+				AdditionalIncludeDirectories="D:\projects\bpnn;D:\projects\bpnn\classifiers;D:\projects\bpnn\ensembles;D:\projects\bpnn\FileFormats;D:\projects\bpnn\pruners;D:\projects\bpnn\utilities;D:\projects\bpnn\IncrementalEnsembles"
 				PreprocessorDefinitions="_CRT_SECURE_NO_DEPRECATE;WINVER=0x0500;_USE_32BIT_TIME_T;_DEBUG;WIN32;_LIB"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
