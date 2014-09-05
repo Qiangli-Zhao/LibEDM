@@ -56,7 +56,7 @@ CDateTime::CDateTime(int Year, int Month, int Day, int Hour, int Minute, int Sec
 	struct tm TimeStruct;
 	memset(&TimeStruct,0,sizeof(TimeStruct));
 
-	TimeStruct.tm_year=Year-1970;
+	TimeStruct.tm_year=Year-1900;
 	TimeStruct.tm_mon=Month-1;
 	TimeStruct.tm_mday=Day-1;
 	TimeStruct.tm_hour=Hour;
@@ -73,7 +73,7 @@ CDateTime::CDateTime(int Year, int Month, int Day)
 	struct tm TimeStruct;
 	memset(&TimeStruct,0,sizeof(TimeStruct));
 
-	TimeStruct.tm_year=Year-1970;
+	TimeStruct.tm_year=Year-1900;
 	TimeStruct.tm_mon=Month-1;
 	TimeStruct.tm_mday=Day-1;
 
