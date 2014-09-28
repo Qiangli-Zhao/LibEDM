@@ -83,7 +83,10 @@ Examples
 The best way to learn LibEDM is to examine and use the examples. To compile the 
 examples, entering the examples directory and input make command for Linux/UNIX 
 (LibEDM must be built before building examples); or opening the workplace file 
-examples.sln in MS-VC++ for MS-Windows, then make all projects. 
+examples.sln in MS-VC++ for MS-Windows, then make all projects.
+
+To run an example on Linux, users should add libEDM directory to their library loading 
+path, i.e. LD_LIBRARY_PATH, or they can just copy LibEDM.so to /lib or /usr/lib.
 
 Detailed description for these examples can be found in corresponding chapters 
 of Users' Manual:
