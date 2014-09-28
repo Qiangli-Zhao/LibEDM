@@ -25,7 +25,7 @@ using namespace std;
 #include "MDSQ.h"
 #include "OrientOrder.h"
 #include "Gasen.h"
-using namespace libep;
+using namespace libedm;
 
 //entry of pruning function and its corresponding parameters
 typedef struct PrunerParamStr

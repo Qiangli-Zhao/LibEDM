@@ -13,7 +13,7 @@ using namespace std;
 #include "Prediction.h"
 #include "Ensemble.h"
 #include "Bagging.h"
-using namespace libep;
+using namespace libedm;
 
 int main(int argc, char* argv[])
 {

@@ -47,7 +47,7 @@ using namespace std;
 #include "Obj.h"
 #include "zString.h"
 #include "Statistic.h"
-using namespace libep;
+using namespace libedm;
 
 
 int main(int argc, char* argv[])

@@ -9,7 +9,7 @@ using namespace std;
 #include "Classifier.h"
 #include "bpnn.h"
 #include "Prediction.h"
-using namespace libep;
+using namespace libedm;
 
 int main(int argc, char* argv[])
 {

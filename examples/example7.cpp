@@ -15,7 +15,7 @@ using namespace std;
 #include "IncrementalTrunkEnsemble.h"
 #include "SEA.h"
 #include "AWE.h"
-using namespace libep;
+using namespace libedm;
 
 
 int main(int argc, char* argv[])

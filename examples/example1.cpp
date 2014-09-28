@@ -7,7 +7,7 @@ using namespace std;
 #include "Obj.h"
 #include "DataSet.h"
 #include "UCIData.h"
-using namespace libep;
+using namespace libedm;
 
 int main(int argc, char* argv[])
 {

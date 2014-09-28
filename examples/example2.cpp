@@ -16,7 +16,7 @@ using namespace std;
 #include "GaussNaiveBayes.h"
 #include "NaiveBayes.h"
 #include "Prediction.h"
-using namespace libep;
+using namespace libedm;
 
 int main(int argc, char* argv[])
 {

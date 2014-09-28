@@ -11,7 +11,7 @@ using namespace std;
 #include "bpnn.h"
 #include "Prediction.h"
 #include "CrossValidate.h"
-using namespace libep;
+using namespace libedm;
 
 class StAccuracy
 {
