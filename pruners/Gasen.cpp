@@ -40,7 +40,7 @@ using namespace std;
 #include "Prediction.h"
 #include "GA.h"
 #include "Gasen.h"
-using namespace libep;
+using namespace libedm;
 
 const char MyName[MAX_OBJECT_NAME_LENGTH]="GASEN";
 //

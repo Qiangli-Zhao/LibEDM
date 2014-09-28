@@ -48,7 +48,7 @@ using namespace std;
 #include "DateTime.h"
 #include "DataSet.h"
 #include "RandSequence.h"
-using namespace libep;
+using namespace libedm;
 
 // CDataset *CDataFactory::Create(const string &InfoFile,const string &DataFile)
 // {
@@ -700,7 +700,7 @@ void CDataset::ReadMatrix(ifstream &DataFile,int Number)
 }
 
 //Locate value
-bool libep::operator ==(const DiscValueStr &a,const DiscValueStr &b)
+bool libedm::operator ==(const DiscValueStr &a,const DiscValueStr &b)
 {
 	return (a.Name==b.Name);
 }

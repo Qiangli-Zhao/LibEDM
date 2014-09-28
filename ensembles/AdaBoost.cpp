@@ -39,7 +39,7 @@ using namespace std;
 #include "Ensemble.h"
 #include "Prediction.h"
 #include "AdaBoost.h"
-using namespace libep;
+using namespace libedm;
 
 
 const char	MyName[MAX_OBJECT_NAME_LENGTH]="AdaBoost";

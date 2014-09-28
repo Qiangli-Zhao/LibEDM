@@ -42,7 +42,7 @@ using namespace std;
 #include "IncrementalEnsemble.h"
 #include "IncrementalTrunkEnsemble.h"
 #include "Win.h"
-using namespace libep;
+using namespace libedm;
 
 
 const char	MyName[MAX_OBJECT_NAME_LENGTH]="FCAE_ENSEMBLE";

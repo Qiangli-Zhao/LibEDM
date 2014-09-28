@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef  INCREMENTAL_TRUNK_ENSEMBLE_INC
 #define  INCREMENTAL_TRUNK_ENSEMBLE_INC
 
-namespace libep
+namespace libedm
 {
 	class CIncrementalTrunkEnsemble : public CIncrementalEnsemble
 	{

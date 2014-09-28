@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef  ENSEMBLE_INC
 #define  ENSEMBLE_INC
 
-namespace libep
+namespace libedm
 {
 
 	class CClassifier;

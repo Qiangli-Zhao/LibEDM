@@ -35,7 +35,7 @@ using namespace std;
 #include "Obj.h"
 #include "zString.h"
 #include "DateTime.h"
-using namespace libep;
+using namespace libedm;
 
 CDateTime CDateTime::Now()
 {

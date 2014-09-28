@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef ENSEMBLE_PRUNER_H
 #define ENSEMBLE_PRUNER_H
 
-namespace libep
+namespace libedm
 {
 	//base class of all ensemble pruning algorithms
 	class CEnsemblePruner : public CClassifier

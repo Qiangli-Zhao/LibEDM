@@ -32,7 +32,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef CLUSTER_ENSPRUNER
 #define CLUSTER_ENSPRUNER
 
-namespace libep
+namespace libedm
 {
 	class  CCluster: public CEnsemblePruner
 	{

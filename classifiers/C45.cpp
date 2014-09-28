@@ -41,7 +41,7 @@ using namespace std;
 #include "Classifier.h"
 #include "Prediction.h"
 #include "C45.h"
-using namespace libep;
+using namespace libedm;
 
 //reimplementation of Quilan's C45 except processing of unknow values
 

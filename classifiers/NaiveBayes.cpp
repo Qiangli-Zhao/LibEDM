@@ -41,7 +41,7 @@ using namespace std;
 #include "IncrementalClassifier.h"
 #include "Prediction.h"
 #include "NaiveBayes.h"
-using namespace libep;
+using namespace libedm;
 
 
 //number of division for a continuous attribute's value range

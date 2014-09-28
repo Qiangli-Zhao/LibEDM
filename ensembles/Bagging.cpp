@@ -36,7 +36,7 @@ using namespace std;
 #include "Classifier.h"
 #include "Ensemble.h"
 #include "Bagging.h"
-using namespace libep;
+using namespace libedm;
 
 
 const char	MyName[MAX_OBJECT_NAME_LENGTH]="Bagging";

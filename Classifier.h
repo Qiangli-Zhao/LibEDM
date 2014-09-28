@@ -36,7 +36,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <string>
 #include "Obj.h"
 
-namespace libep
+namespace libedm
 {
 	//base class of all classifier
 	class CObj;

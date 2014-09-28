@@ -32,11 +32,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 using namespace std;
 #include "Obj.h"
 #include "RandSequence.h"
-using namespace libep;
+using namespace libedm;
 
 //return a pseudorandom number, between 0 and Max-1
 //Max: should no larger than INT_MAX
-int libep::IntRand(int Max)
+int libedm::IntRand(int Max)
 {
 	int Value=0;
 

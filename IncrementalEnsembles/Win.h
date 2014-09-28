@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef  WIN_INCENSEMBLE_INC
 #define  WIN_INCENSEMBLE_INC
 
-namespace libep
+namespace libedm
 {
 	class CIncrementalTrunkEnsemble;
 	class CWin : public CIncrementalTrunkEnsemble

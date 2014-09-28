@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="libep"
+	Name="libedm"
 	ProjectGUID="{D8DD39D7-D278-4DBF-8971-A5A1A596F30B}"
 	TargetFrameworkVersion="131072"
 	>
@@ -19,8 +19,8 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\libep___Win32_Release"
-			IntermediateDirectory=".\libep___Win32_Release"
+			OutputDirectory=".\libedm___Win32_Release"
+			IntermediateDirectory=".\libedm___Win32_Release"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -51,10 +51,10 @@
 				StringPooling="true"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
-				PrecompiledHeaderFile=".\libep___Win32_Release/libep.pch"
-				AssemblerListingLocation=".\libep___Win32_Release/"
-				ObjectFile=".\libep___Win32_Release/"
-				ProgramDataBaseFileName=".\libep___Win32_Release/"
+				PrecompiledHeaderFile=".\libedm___Win32_Release/libedm.pch"
+				AssemblerListingLocation=".\libedm___Win32_Release/"
+				ObjectFile=".\libedm___Win32_Release/"
+				ProgramDataBaseFileName=".\libedm___Win32_Release/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -71,7 +71,7 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile=".\libep___Win32_Release\libep.lib"
+				OutputFile=".\libedm___Win32_Release\libedm.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -83,7 +83,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\libep___Win32_Release/libep.bsc"
+				OutputFile=".\libedm___Win32_Release/libedm.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -94,8 +94,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\libep___Win32_Debug"
-			IntermediateDirectory=".\libep___Win32_Debug"
+			OutputDirectory=".\libedm___Win32_Debug"
+			IntermediateDirectory=".\libedm___Win32_Debug"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -125,10 +125,10 @@
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
-				PrecompiledHeaderFile=".\libep___Win32_Debug/libep.pch"
-				AssemblerListingLocation=".\libep___Win32_Debug/"
-				ObjectFile=".\libep___Win32_Debug/"
-				ProgramDataBaseFileName=".\libep___Win32_Debug/"
+				PrecompiledHeaderFile=".\libedm___Win32_Debug/libedm.pch"
+				AssemblerListingLocation=".\libedm___Win32_Debug/"
+				ObjectFile=".\libedm___Win32_Debug/"
+				ProgramDataBaseFileName=".\libedm___Win32_Debug/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="4"
@@ -146,7 +146,7 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile=".\libep___Win32_Debug\libep.lib"
+				OutputFile=".\libedm___Win32_Debug\libedm.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -158,7 +158,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\libep___Win32_Debug/libep.bsc"
+				OutputFile=".\libedm___Win32_Debug/libedm.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -201,10 +201,10 @@
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
-				PrecompiledHeaderFile=".\libep___Win32_Release/libep.pch"
-				AssemblerListingLocation=".\libep___Win32_Release/"
-				ObjectFile=".\libep___Win32_Release/"
-				ProgramDataBaseFileName=".\libep___Win32_Release/"
+				PrecompiledHeaderFile=".\libedm___Win32_Release/libedm.pch"
+				AssemblerListingLocation=".\libedm___Win32_Release/"
+				ObjectFile=".\libedm___Win32_Release/"
+				ProgramDataBaseFileName=".\libedm___Win32_Release/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -221,7 +221,7 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile=".\libep___Win32_Release\libep.lib"
+				OutputFile=".\libedm___Win32_Release\libedm.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -233,7 +233,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\libep___Win32_Release/libep.bsc"
+				OutputFile=".\libedm___Win32_Release/libedm.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -275,10 +275,10 @@
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
-				PrecompiledHeaderFile=".\libep___Win32_Debug/libep.pch"
-				AssemblerListingLocation=".\libep___Win32_Debug/"
-				ObjectFile=".\libep___Win32_Debug/"
-				ProgramDataBaseFileName=".\libep___Win32_Debug/"
+				PrecompiledHeaderFile=".\libedm___Win32_Debug/libedm.pch"
+				AssemblerListingLocation=".\libedm___Win32_Debug/"
+				ObjectFile=".\libedm___Win32_Debug/"
+				ProgramDataBaseFileName=".\libedm___Win32_Debug/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
@@ -296,7 +296,7 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile=".\libep___Win32_Debug\libep.lib"
+				OutputFile=".\libedm___Win32_Debug\libedm.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -308,7 +308,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\libep___Win32_Debug/libep.bsc"
+				OutputFile=".\libedm___Win32_Debug/libedm.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"

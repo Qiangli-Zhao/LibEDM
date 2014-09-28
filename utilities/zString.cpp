@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <string>
 using namespace std;
 #include "zString.h"
-using namespace libep;
+using namespace libedm;
 
 void CzString::TrimLeft(string &Str)
 {

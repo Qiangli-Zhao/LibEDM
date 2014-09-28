@@ -45,7 +45,7 @@ using namespace std;
 #include "RandSequence.h"
 #include "DataSet.h"
 #include "UCIData.h"
-using namespace libep;
+using namespace libedm;
 
 //reading information from an UCI information file
 void CUCIData::ReadInfo(ifstream &InfoFile)

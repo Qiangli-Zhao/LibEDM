@@ -44,7 +44,7 @@ using namespace std;
 #include "RandSequence.h"
 #include "DataSet.h"
 #include "ArffData.h"
-using namespace libep;
+using namespace libedm;
 
 //reading information from an ARFF format file
 void CArffData::ReadInfo(ifstream &InfoFile)

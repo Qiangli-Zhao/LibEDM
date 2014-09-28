@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef  CUSTOMENSEMBLE_GENER_INC
 #define  CUSTOMENSEMBLE_GENER_INC
 
-namespace libep
+namespace libedm
 {
 	class CEnsemble;
 	class CCustomEnsemble : public CEnsemble

@@ -32,7 +32,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef SELECTALL_ENSPRUNER
 #define SELECTALL_ENSPRUNER
 
-namespace libep
+namespace libedm
 {
 
 	class CEnsemblePruner;

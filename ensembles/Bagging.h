@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef  BAGGING_GENER_INC
 #define  BAGGING_GENER_INC
 
-namespace libep
+namespace libedm
 {
 	class CEnsemble;
 	class CBagging : public CEnsemble

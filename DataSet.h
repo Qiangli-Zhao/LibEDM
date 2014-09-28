@@ -37,7 +37,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <string>
 #include <deque>
 
-namespace libep
+namespace libedm
 {
 	//return a pseudo-random number, between 0 and Max-1
 	//Max: should no larger than INT_MAX

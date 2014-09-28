@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef GENERIC_ALGORITHM
 #define GENERIC_ALGORITHM
 
-namespace libep
+namespace libedm
 {
 	class  CGA
 	{

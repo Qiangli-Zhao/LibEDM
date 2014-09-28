@@ -36,7 +36,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <vector>
 #include <ctime>
 
-namespace libep
+namespace libedm
 {
 	//predicted result for each instance
 	class CDataset;

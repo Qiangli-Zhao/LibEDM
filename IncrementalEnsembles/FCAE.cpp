@@ -47,7 +47,7 @@ using namespace std;
 #include "FS.h"
 #include "FCAE.h"
 #include "OrientOrder.h"
-using namespace libep;
+using namespace libedm;
 
 
 const char	MyName[MAX_OBJECT_NAME_LENGTH]="FCAE_ENSEMBLE";

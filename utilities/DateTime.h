@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef ZQL_DATETIME
 #define ZQL_DATETIME
 
-namespace libep
+namespace libedm
 {
 	class CDateTime
 	{

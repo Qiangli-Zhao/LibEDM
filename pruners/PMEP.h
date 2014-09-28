@@ -32,7 +32,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef CPM_ENSPRUNER
 #define CPM_ENSPRUNER
 
-namespace libep
+namespace libedm
 {
 	class  CPMEP: public CEnsemblePruner
 	{

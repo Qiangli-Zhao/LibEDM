@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef  ADABOOST_GENER_INC
 #define  ADABOOST_GENER_INC
 
-namespace libep
+namespace libedm
 {
 	class CEnsemble;
 	class CAdaBoost : public CEnsemble

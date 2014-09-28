@@ -32,7 +32,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef SELBEST_ENSPRUNER
 #define SELBEST_ENSPRUNER
 
-namespace libep
+namespace libedm
 {
 
 	class CEnsemblePruner;

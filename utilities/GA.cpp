@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 using namespace std;
 #include "Obj.h"
 #include "GA.h"
-using namespace libep;
+using namespace libedm;
 
 
 //int TribeSize=30;

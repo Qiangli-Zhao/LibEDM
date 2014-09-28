@@ -32,7 +32,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef ORIENTORDER_ENSPRUNER
 #define ORIENTORDER_ENSPRUNER
 
-namespace libep
+namespace libedm
 {
 	class  COrientOrder: public CEnsemblePruner
 	{

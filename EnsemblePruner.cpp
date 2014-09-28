@@ -39,7 +39,7 @@ using namespace std;
 #include "Classifier.h"
 #include "Ensemble.h"
 #include "EnsemblePruner.h"
-using namespace libep;
+using namespace libedm;
 
 static const char MyName[MAX_OBJECT_NAME_LENGTH]="EnsemblePruner";
 const string CEnsemblePruner::StaticName=MyName;

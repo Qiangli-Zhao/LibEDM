@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef  SVM_Head_File
 #define  SVM_Head_File
 
-namespace libep
+namespace libedm
 {
 
 	class CClassifier;

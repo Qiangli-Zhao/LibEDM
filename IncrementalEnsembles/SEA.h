@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef  SEA_INCENSEMBLE_INC
 #define  SEA_INCENSEMBLE_INC
 
-namespace libep
+namespace libedm
 {
 	class CIncrementalTrunkEnsemble;
 	class CSEA : public CIncrementalTrunkEnsemble

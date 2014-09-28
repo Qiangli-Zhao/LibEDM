@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef ZQL_STRING_INC
 #define ZQL_STRING_INC
 
-namespace libep
+namespace libedm
 {
 	namespace CzString
 	{

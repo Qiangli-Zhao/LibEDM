@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef  INCEMENTAL_CLASSIFIER_INC
 #define  INCEMENTAL_CLASSIFIER_INC
 
-namespace libep
+namespace libedm
 {
 	class CClassifier;
 	class CIncrementalClassifier : public CClassifier

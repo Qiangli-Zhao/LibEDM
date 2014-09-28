@@ -35,7 +35,7 @@ using namespace std;
 #include "Obj.h"
 #include "DataSet.h"
 #include "Prediction.h"
-using namespace libep;
+using namespace libedm;
 
 // void operator +=(PRED_RESULT &a, const PRED_RESULT &b)
 // {

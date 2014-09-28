@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef READ_UCIFILE_INC
 #define READ_UCIFILE_INC
 
-namespace libep
+namespace libedm
 {
 	class CUCIData: public CDataset
 	{

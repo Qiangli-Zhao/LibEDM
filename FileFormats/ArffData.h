@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef READ_ARFFFILE_INC
 #define READ_ARFFFILE_INC
 
-namespace libep
+namespace libedm
 {
 	class CArffData: public CDataset
 	{

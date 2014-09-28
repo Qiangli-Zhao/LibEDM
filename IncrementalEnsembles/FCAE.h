@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef  FCAE_INCENSEMBLE_INC
 #define  FCAE_INCENSEMBLE_INC
 
-namespace libep
+namespace libedm
 {
 	class CIncrementalTrunkEnsemble;
 	class CFCAE : public CIncrementalTrunkEnsemble

@@ -40,7 +40,7 @@ using namespace std;
 #include "EnsemblePruner.h"
 #include "Prediction.h"
 #include "OrientOrder.h"
-using namespace libep;
+using namespace libedm;
 
 const char MyName[MAX_OBJECT_NAME_LENGTH]="OrientOrder";
 

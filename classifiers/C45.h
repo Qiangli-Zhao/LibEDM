@@ -35,7 +35,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <fstream>
 
-namespace libep
+namespace libedm
 {
 
 	class CC45 : public CClassifier

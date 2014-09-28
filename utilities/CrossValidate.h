@@ -34,7 +34,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define CROSS_VALIDATION_H
 
 
-namespace libep
+namespace libedm
 {
 
 	//test a trainer

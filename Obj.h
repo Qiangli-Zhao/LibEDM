@@ -38,7 +38,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <cstdlib>
 #include <climits>
 
-namespace libep
+namespace libedm
 {
 	const int LIBEP_VERSION=001;//version of LibEP
 	const int MAX_FILE_PATH=255;//Max path length for a file

@@ -42,7 +42,7 @@ using namespace std;
 #include "IncrementalEnsemble.h"
 #include "IncrementalTrunkEnsemble.h"
 #include "SEA_OP.h"
-using namespace libep;
+using namespace libedm;
 
 
 const char	MyName[MAX_OBJECT_NAME_LENGTH]="SEA_OP_ENSEMBLE";

@@ -35,7 +35,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <vector>
 #include <list>
 
-namespace libep
+namespace libedm
 {
 	class  CGasen : public CEnsemblePruner
 	{

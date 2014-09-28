@@ -43,7 +43,7 @@ using namespace std;
 #include "Prediction.h"
 #include "EnsemblePruner.h"
 #include "PMEP.h"
-using namespace libep;
+using namespace libedm;
 
 const char MyName[MAX_OBJECT_NAME_LENGTH]="PMEP";
 

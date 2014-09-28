@@ -39,7 +39,7 @@ using namespace std;
 #include "DataSet.h"
 #include "Prediction.h"
 #include "Ensemble.h"
-using namespace libep;
+using namespace libedm;
 
 static const char MyName[MAX_OBJECT_NAME_LENGTH]="Ensemble";
 const string CEnsemble::StaticName=MyName;

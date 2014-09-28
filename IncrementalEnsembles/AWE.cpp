@@ -42,7 +42,7 @@ using namespace std;
 #include "IncrementalTrunkEnsemble.h"
 #include "CrossValidate.h"
 #include "AWE.h"
-using namespace libep;
+using namespace libedm;
 
 
 const char	MyName[MAX_OBJECT_NAME_LENGTH]="AWE_ENSEMBLE";

@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef  ACE_INCENSEMBLE_INC
 #define  ACE_INCENSEMBLE_INC
 
-namespace libep
+namespace libedm
 {
 	class CIncrementalEnsemble;
 	class CACE : public CIncrementalEnsemble

@@ -39,7 +39,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 using namespace std;
 #include "Obj.h"
 #include "Statistic.h"
-using namespace libep;
+using namespace libedm;
 
 const double pi=3.1415926535897932;
 
@@ -322,12 +322,12 @@ void CStat::obtainExhaustive(set<set<int>,IntSetOrder> &E, const set<int> &C,int
 	return;
 }
 
-bool libep::operator ==(const RankStr &a,const RankStr &b)
+bool libedm::operator ==(const RankStr &a,const RankStr &b)
 {
 	return a.vs==b.vs;
 }
 
-bool libep::RankDescOrder(const RankStr &a,const RankStr &b)
+bool libedm::RankDescOrder(const RankStr &a,const RankStr &b)
 {
 	return (a.z>b.z);
 }

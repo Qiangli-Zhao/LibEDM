@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef  RANDSEQUENCE_INC
 #define  RANDSEQUENCE_INC
 
-namespace libep
+namespace libedm
 {
 	class CRandSequence
 	{

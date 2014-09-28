@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef STAT_INC
 #define STAT_INC
 
-namespace libep
+namespace libedm
 {
 	//function needed by statistic test
 	//order of integer sets

@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef  GAUSSNAIVEBAYES_Head_File
 #define  GAUSSNAIVEBAYES_Head_File
 
-namespace libep
+namespace libedm
 {
 
 	class CDataset;

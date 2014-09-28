@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef  INCREMENTAL_ENSEMBLE_INC
 #define  INCREMENTAL_ENSEMBLE_INC
 
-namespace libep
+namespace libedm
 {
 	class CCustomEnsemble;
 	class CIncrementalClassifier;

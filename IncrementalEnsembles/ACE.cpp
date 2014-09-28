@@ -45,7 +45,7 @@ using namespace std;
 #include "C45.h"
 #include "Statistic.h"
 #include "ACE.h"
-using namespace libep;
+using namespace libedm;
 
 
 const char	MyName[MAX_OBJECT_NAME_LENGTH]="ACE_ENSEMBLE";

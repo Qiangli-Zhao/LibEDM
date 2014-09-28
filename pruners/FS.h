@@ -32,7 +32,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef FS_ENSPRUNER
 #define FS_ENSPRUNER
 
-namespace libep
+namespace libedm
 {
 	class CEnsemblePruner;
 	class  CForwardSelect : public CEnsemblePruner

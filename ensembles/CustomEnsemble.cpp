@@ -35,7 +35,7 @@ using namespace std;
 #include "Classifier.h"
 #include "Ensemble.h"
 #include "CustomEnsemble.h"
-using namespace libep;
+using namespace libedm;
 
 
 const char	MyName[MAX_OBJECT_NAME_LENGTH]="CustomEnsemble";
