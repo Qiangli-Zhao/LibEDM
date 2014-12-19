@@ -214,7 +214,7 @@ void CDataset::Load(const CASE_INFO &uCaseInfo,const vector<StringArray> &Instan
 	//read data
 	for(int i=0;i<(int)Instances.size();i++)
 	{
-		if(Instances[i].size()!=CaseInfo.ReadWidth)
+		if((int)Instances[i].size()!=CaseInfo.ReadWidth)
 			throw(CError("row size don't match description!",306,0));
 
 		InstanceStr Inst;
@@ -673,7 +673,7 @@ void CDataset::ReadMatrix(ifstream &DataFile,int Number)
 		}//line
 		delete [] DataLine;
 		//not enough values for all attributes
-		if(Inst.size()+1!=CaseInfo.ValidWidth)
+		if((int)Inst.size()+1!=CaseInfo.ValidWidth)
 		{
 			basic_ostringstream<char> OutMsg;
 			OutMsg<<"Data file: illegal instance data in line "<<InstanceNum<<ends;
@@ -1143,7 +1143,7 @@ bool CDataset::SwapInstance(int a,int b)
 //should remove all ignored attributes, transform discrete values and labels into number (start from 0)
 void CDataset::Insert(const InstanceStr &Instance)
 {
-	if(Instance.size()!=CaseInfo.ValidWidth)
+	if((int)Instance.size()!=CaseInfo.ValidWidth)
 		throw(CError("Invalid data!",601,0));
 
 	//attributes

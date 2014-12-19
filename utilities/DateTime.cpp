@@ -37,6 +37,12 @@ using namespace std;
 #include "DateTime.h"
 using namespace libedm;
 
+#ifdef WIN32
+	#define timezone _timezone
+	#define tzset _tzset
+#endif
+
+//time values are GMT time
 CDateTime CDateTime::Now()
 {
 	time_t TimeNow;
@@ -58,14 +64,15 @@ CDateTime::CDateTime(int Year, int Month, int Day, int Hour, int Minute, int Sec
 
 	TimeStruct.tm_year=Year-1900;
 	TimeStruct.tm_mon=Month-1;
-	TimeStruct.tm_mday=Day-1;
-	TimeStruct.tm_hour=Hour;
-	TimeStruct.tm_min=Minute;
-	TimeStruct.tm_sec=Second;
+	TimeStruct.tm_mday=Day;
 
+	tzset();
+	long Diff=timezone;
+	TimeStruct.tm_sec=TimeStruct.tm_sec-Diff+1;
 	TimeValue=(int)mktime(&TimeStruct);
 	if(TimeValue<0)
 		throw(CError("DateTime: Time before 1970-1-1!",100,0));
+    TimeValue--;
 }
 
 CDateTime::CDateTime(int Year, int Month, int Day)
@@ -75,11 +82,15 @@ CDateTime::CDateTime(int Year, int Month, int Day)
 
 	TimeStruct.tm_year=Year-1900;
 	TimeStruct.tm_mon=Month-1;
-	TimeStruct.tm_mday=Day-1;
+	TimeStruct.tm_mday=Day;
 
+	tzset();
+	long Diff=timezone;
+	TimeStruct.tm_sec=TimeStruct.tm_sec-Diff+1;
 	TimeValue=(int)mktime(&TimeStruct);
 	if(TimeValue<0)
 		throw(CError("DateTime: Time before 1970-1-1!",101,0));
+    TimeValue--;
 }
 
 CDateTime::CDateTime(time_t Time)
@@ -95,6 +106,7 @@ CDateTime::CDateTime()
 }
 
 //时间格式必须类似：1911-11-11 12:12:12，允许没有时间部分
+//input is local time, but mktime() need GMT time 
 CDateTime::CDateTime(const string &uTimeStr)
 {
 	if(uTimeStr.size()<=0)
@@ -122,9 +134,13 @@ CDateTime::CDateTime(const string &uTimeStr)
 		TimeStruct.tm_sec=CzString::ToInt(TimeStr.substr(17,2));
 	}
 
+	tzset();
+	long Diff=timezone;
+	TimeStruct.tm_sec=TimeStruct.tm_sec-Diff+1;
 	TimeValue=(int)mktime(&TimeStruct);
 	if(TimeValue<0)
 		throw(CError("DateTime: Time before 1970-1-1!",101,0));
+    TimeValue--;
 }
 
 CDateTime CDateTime::operator +(const CDateTime &Time) const
@@ -192,7 +208,7 @@ string CDateTime::FormatDateTime() const
 	//转化为时间结构
 	struct tm TimeStruct;
 	time_t TimeData=(time_t)TimeValue;
-	TimeStruct=*localtime(&TimeData);
+	TimeStruct=*gmtime(&TimeData);
 
 	char TempStr[64];
 	strftime(TempStr,sizeof(TempStr)-1,"%Y-%m-%d %H:%M:%S",&TimeStruct);
@@ -205,7 +221,7 @@ string CDateTime::FormatDate() const
 	//转化为时间结构
 	struct tm TimeStruct;
 	time_t TimeData=(time_t)TimeValue;
-	TimeStruct=*localtime(&TimeData);
+	TimeStruct=*gmtime(&TimeData);
 
 	char TempStr[64];
 	strftime(TempStr,sizeof(TempStr)-1,"%Y-%m-%d",&TimeStruct);
@@ -218,7 +234,7 @@ string CDateTime::FormatTime() const
 	//转化为时间结构
 	struct tm TimeStruct;
 	time_t TimeData=(time_t)TimeValue;
-	TimeStruct=*localtime(&TimeData);
+	TimeStruct=*gmtime(&TimeData);
 
 	char TempStr[64];
 	strftime(TempStr,sizeof(TempStr)-1,"%H:%M:%S",&TimeStruct);

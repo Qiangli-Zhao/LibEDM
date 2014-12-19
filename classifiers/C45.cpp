@@ -45,10 +45,7 @@ using namespace libedm;
 
 //reimplementation of Quilan's C45 except processing of unknow values
 
-const int CC45::BrLeaf=0;
-const int CC45::BrDiscr=1;
-const int CC45::ThreshContin=2;
-const int CC45::BrSubset=3;
+//const int CC45::BrSubset=3;
 
 static const char MyName[MAX_OBJECT_NAME_LENGTH]="C45";
 const string CC45::StaticName=MyName;
@@ -88,10 +85,10 @@ CC45::CC45(const CDataset &UTrainSet,int UMINOBJS,double UEpsilon,double UCF,dou
 	clock_t start=clock();
 
 
-	int ClassNum=UTrainSet.GetInfo().ClassNum;
+//	int ClassNum=UTrainSet.GetInfo().ClassNum;
 	//
 	IsPruned=false;
-	const MATRIX &TrainData=TrainSet.GetData();
+//	const MATRIX &TrainData=TrainSet.GetData();
 	//info of training data
 	const CASE_INFO &CaseInfo=TrainSet.GetInfo();
 	//number of the training instances
@@ -690,7 +687,7 @@ int CC45::Group(int V,int Fp,int Lp,NodeStr *TestNode)
 	//training data
 	const MATRIX &TrainData=TrainSet.GetData();
 	//info of training data
-	const CASE_INFO &CaseInfo=TrainSet.GetInfo();
+//	const CASE_INFO &CaseInfo=TrainSet.GetInfo();
 
 	int Att=TestNode->Attr;
 	switch(TestNode->NodeType)
@@ -961,7 +958,7 @@ CPrediction *CC45::Classify(const CDataset &TestSet) const
 	//start time for training
 	clock_t Start=clock();
 
-	const MATRIX &TrainData=TestSet.GetData();
+//	const MATRIX &TrainData=TestSet.GetData();
 	const CASE_INFO &CaseInfo=TestSet.GetInfo();
 	int ClassNum=CaseInfo.ClassNum;
 	int CaseNum=CaseInfo.Height;

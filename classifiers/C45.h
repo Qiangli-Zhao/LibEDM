@@ -42,10 +42,12 @@ namespace libedm
 	{
 	private:
 		//node type
-		static const int BrLeaf;	//leaf
-		static const int BrDiscr;	//discrete
-		static const int ThreshContin;	//continuous attribute divided by a threshold
-		static const int BrSubset;	//subset test
+		#define BrLeaf			0//leaf
+		#define BrDiscr			1//discrete
+		#define ThreshContin	2//continuous attribute divided by a threshold
+		#define BrSubset		3//subset test
+
+//		static const int BrSubset;	
 
 		//node description
 		typedef  struct NodeStr

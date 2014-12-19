@@ -37,6 +37,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <istream>
 #include <sstream>
 #include <cstring>
+#include <ctime>
 using namespace std;
 #include "Obj.h"
 #include "zString.h"

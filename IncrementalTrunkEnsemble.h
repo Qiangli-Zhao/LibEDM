@@ -40,7 +40,10 @@ namespace libedm
 	public:
 		//the new classifier is build and given from outside
 		virtual void Train(const CDataset &Dataset, const CClassifier *Classifier)=0;
+		virtual void Train(const CDataset &Dataset)=0;
 	};
+
+	typedef CIncrementalTrunkEnsemble *IncTrunkEnsembleCreate(int MaxSize,const void *UParams);
 }
 
 #endif

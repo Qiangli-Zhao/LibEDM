@@ -41,11 +41,25 @@ namespace libedm
 	public:
 		typedef struct ParamStr
 		{
-			;
+			double Alpha;
+			int TargetSize;
+			CreateFunc *Batch;
+			void *BatchParams;
 		}ParamStr;
+
 	public:
 		//base classifier function entry and corresponding parameters
-		CFCAE(int uMaxSize,double uAlpha,int TargetSize,CreateFunc *Func,void *CreatorParams);
+		CFCAE(int uMaxSize,double uAlpha=0.1,int uTargetSize=0,
+			CreateFunc *Batch=CC45::Create,const void *BatchParams=NULL);
+		static CIncrementalTrunkEnsemble *Create(int MaxSize,const void *UParams)
+		{
+			if(UParams==NULL)
+				return new CFCAE(MaxSize);
+
+			const ParamStr *Param=(const ParamStr*)UParams;
+			return new CFCAE(MaxSize,Param->Alpha,Param->TargetSize,
+				Param->Batch,Param->BatchParams);
+		}
 		void Train(const CDataset &Dataset);
 		void Train(const CDataset &Dataset, const CClassifier *Classifier);
 

@@ -41,13 +41,14 @@ using namespace std;
 #include "Ensemble.h"
 #include "IncrementalEnsemble.h"
 #include "IncrementalTrunkEnsemble.h"
+#include "C45.h"
 #include "Win.h"
 using namespace libedm;
 
 
 const char	MyName[MAX_OBJECT_NAME_LENGTH]="FCAE_ENSEMBLE";
 
-CWin::CWin(int uMaxSize,CreateFunc *Func,void *CreatorParams)
+CWin::CWin(int uMaxSize,CreateFunc *Func,const void *CreatorParams)
 :MaxSize(uMaxSize)
 {
 	Name=MyName;

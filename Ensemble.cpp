@@ -171,7 +171,7 @@ CPrediction *CEnsemble::Classify(const CDataset &DataSet,const vector<double> &U
 	clock_t Start=clock();
 
 	//data info
-	const MATRIX &TrainData=DataSet.GetData();
+//	const MATRIX &TrainData=DataSet.GetData();
 	const CASE_INFO &CaseInfo=DataSet.GetInfo();
 	//malloc space for result
 	vector<double> Line(CaseInfo.ClassNum,0);
@@ -214,7 +214,7 @@ CPrediction *CEnsemble::Classify(const CDataset &DataSet,const vector<CPredictio
 	if(UserWeights.size()!=Predictions.size())
 		throw(CError("Ensemble: error in user-defined weights!",104,0));
 	//data info
-	const MATRIX &TrainData=DataSet.GetData();
+//	const MATRIX &TrainData=DataSet.GetData();
 	const CASE_INFO &CaseInfo=DataSet.GetInfo();
 	//malloc space for result
 	vector<double> Line(CaseInfo.ClassNum,0);

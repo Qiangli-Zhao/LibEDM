@@ -41,6 +41,7 @@ using namespace std;
 #include "Ensemble.h"
 #include "IncrementalEnsemble.h"
 #include "IncrementalTrunkEnsemble.h"
+#include "C45.h"
 #include "SEA.h"
 using namespace libedm;
 

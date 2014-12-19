@@ -41,6 +41,7 @@ using namespace std;
 #include "IncrementalEnsemble.h"
 #include "IncrementalTrunkEnsemble.h"
 #include "CrossValidate.h"
+#include "C45.h"
 #include "AWE.h"
 using namespace libedm;
 

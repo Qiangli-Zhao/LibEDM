@@ -45,10 +45,10 @@ namespace libedm
 			int		Sa;//short term memory size
 			int		Sc;//long term memory size
 			int		u;//adjustment factor of ensemble
-			CreateFunc *Online;
+			IncermentalCreateFunc *Online;
 			CreateFunc *Batch;
-			const void *OnlineParams;
-			const void *BtachParams;
+			void *OnlineParams;
+			void *BatchParams;
 		}ParamStr;
 
 	public:
@@ -56,6 +56,16 @@ namespace libedm
 		CACE(int MaxSize,double Alpha=0.01,int Sa=30,int Sc=200,double u=3.0,
 			IncermentalCreateFunc *Online=CGaussNaiveBayes::Create,const void *OnlineParams=NULL,
 			CreateFunc *Batch=CC45::Create,const void *BatchParams=NULL);
+		static CIncrementalEnsemble *Create(int MaxSize,const void *UParams)
+		{
+			if(UParams==NULL)
+				return new CACE(MaxSize);
+
+			const ParamStr *Param=(const ParamStr*)UParams;
+			return new CACE(MaxSize,Param->Alpha,Param->Sa,Param->Sc,Param->u,
+				Param->Online,Param->OnlineParams,
+				Param->Batch,Param->BatchParams);
+		}
 		~CACE();
 
 		void Train(const CDataset &Dataset);

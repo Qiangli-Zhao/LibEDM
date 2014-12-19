@@ -39,8 +39,23 @@ namespace libedm
 	class CAWE : public CIncrementalTrunkEnsemble
 	{
 	public:
+		typedef struct ParamStr
+		{
+			CreateFunc *Batch;
+			void *BatchParams;
+		}ParamStr;
+
+	public:
 		//base classifier function entry and corresponding parameters
-		CAWE(int MaxSize,CreateFunc *Creator, const void *Params);
+		CAWE(int MaxSize,CreateFunc *Batch=CC45::Create,const void *BatchParams=NULL);
+		static CIncrementalTrunkEnsemble *Create(int MaxSize,const void *UParams)
+		{
+			if(UParams==NULL)
+				return new CAWE(MaxSize);
+
+			const ParamStr *Param=(const ParamStr*)UParams;
+			return new CAWE(MaxSize,Param->Batch,Param->BatchParams);
+		}
 		void Train(const CDataset &Dataset);
 		void Train(const CDataset &Dataset, const CClassifier *Classifier);
 

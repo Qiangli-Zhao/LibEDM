@@ -45,6 +45,7 @@ using namespace std;
 #include "Cluster.h"
 #include "MDSQ.h"
 #include "FS.h"
+#include "C45.h"
 #include "FCAE.h"
 #include "OrientOrder.h"
 using namespace libedm;
@@ -52,12 +53,14 @@ using namespace libedm;
 
 const char	MyName[MAX_OBJECT_NAME_LENGTH]="FCAE_ENSEMBLE";
 
-CFCAE::CFCAE(int uMaxSize,double uAlpha,int uTargetSize,CreateFunc *Func,void *CreatorParams)
+CFCAE::CFCAE(int uMaxSize,double uAlpha,int uTargetSize,CreateFunc *Func,const void *CreatorParams)
 :MaxSize(uMaxSize),Alpha(uAlpha),TargetSize(uTargetSize)
 {
 	Name=MyName;
 	CreatingTime=0;
 	Times=0;
+	if(TargetSize<=0)
+		TargetSize=MaxSize/5;
 
 	Creator.Creator=Func;
 	Creator.Params=CreatorParams;
@@ -151,7 +154,7 @@ void CFCAE::Train(const CDataset &Dataset, const CClassifier *Cls)
 	//number of training
 	Times++;
 	//
-	const int DataSize=Dataset.GetInfo().Height;
+//	const int DataSize=Dataset.GetInfo().Height;
 	//initializing weight for a new classifier
 	const double IniWeight=1.0;
 	//if we need to remove a classifier before create a new one
@@ -160,7 +163,7 @@ void CFCAE::Train(const CDataset &Dataset, const CClassifier *Cls)
 	double WorstWeight=100.0;
 	//
 	int EnsembleSize=GetSize();
-	if(Memorys.size()!=EnsembleSize || Weights.size()!=EnsembleSize)
+	if((int)Memorys.size()!=EnsembleSize || (int)Weights.size()!=EnsembleSize)
 	{
 		throw(CError("Error!",100,0));
 	}
@@ -206,7 +209,7 @@ void CFCAE::Train(const CDataset &Dataset, const CClassifier *Cls)
 		}
 	}
 
-	//removed classifiers that is the worst if we have max size
+	//removed the worst classifiers (if we have set the max size)
 	if(GetSize()>=MaxSize)
 	{
 		if(Worst<0)
